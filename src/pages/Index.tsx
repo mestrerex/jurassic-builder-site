@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
@@ -6,6 +6,43 @@ import { toast } from "sonner";
 const Index = () => {
   const [guestCode, setGuestCode] = useState("");
   const [email, setEmail] = useState("");
+  const [currentPhrase, setCurrentPhrase] = useState("");
+  const [isVisible, setIsVisible] = useState(true);
+
+  const phrases = [
+    "A força dos antigos está despertando.",
+    "Prepare-se para algo colossal.",
+    "O rugido da inovação ecoa novamente.",
+    "Grandes ideias nunca dormem por muito tempo.",
+    "Um novo império está surgindo das sombras.",
+    "Quando o instinto encontra a inteligência, nasce o Mestre Rex.",
+    "O futuro caminha com passos de gigante.",
+    "Transformando a pré-história em tecnologia viva.",
+    "Do caos, nasce o domínio.",
+    "As lendas voltam… mais fortes do que nunca.",
+    "A era dos dinossauros digitais começou."
+  ];
+
+  useEffect(() => {
+    const getRandomPhrase = () => phrases[Math.floor(Math.random() * phrases.length)];
+    setCurrentPhrase(getRandomPhrase());
+
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      
+      setTimeout(() => {
+        setCurrentPhrase(prev => {
+          if (prev === "Em construção") {
+            return getRandomPhrase();
+          }
+          return "Em construção";
+        });
+        setIsVisible(true);
+      }, 500);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,13 +69,20 @@ const Index = () => {
     <div className="flex min-h-screen items-center justify-center p-4">
       <div className="w-full max-w-md animate-fade-in">
         {/* Title */}
-        <h1 className="font-jurassic text-center text-5xl sm:text-6xl md:text-7xl mb-3 text-accent drop-shadow-[0_0_25px_hsl(45_60%_50%/0.5)] leading-tight tracking-wide">
-          🦖 Mestre Rex
+        <h1 className="font-jurassic text-center text-5xl sm:text-6xl md:text-7xl mb-8 text-accent drop-shadow-[0_0_25px_hsl(45_60%_50%/0.5)] leading-tight tracking-wider">
+          Mestre Rex
         </h1>
         
-        <p className="text-center text-xl sm:text-2xl font-bold mb-12 text-foreground/80 tracking-wide">
-          Em Construção
-        </p>
+        {/* Rotating Phrase */}
+        <div className="min-h-[120px] flex items-center justify-center mb-8">
+          <p 
+            className={`font-jurassic text-center text-xl sm:text-2xl md:text-3xl font-bold text-foreground/90 tracking-wide px-4 transition-all duration-500 ${
+              isVisible ? 'opacity-100 blur-0' : 'opacity-0 blur-sm'
+            }`}
+          >
+            {currentPhrase}
+          </p>
+        </div>
 
         {/* Form Container */}
         <form onSubmit={handleRegister} className="space-y-6">

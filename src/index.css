@@ -102,7 +102,10 @@ All colors MUST be HSL.
   }
   
   .font-jurassic {
-    font-family: 'Rye', serif;
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
   
   .font-sans {
