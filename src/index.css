@@ -8,42 +8,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Jurassic inspired colors - moss green, stone brown, aged gold */
-    --background: 82 20% 12%;
-    --foreground: 45 50% 88%;
+    /* Cosmic & Metallic Theme - deep space blue + metallic gold */
+    --background: 220 40% 8%;
+    --foreground: 45 90% 92%;
 
-    --card: 30 20% 18%;
-    --card-foreground: 45 50% 88%;
+    --card: 220 35% 12%;
+    --card-foreground: 45 90% 92%;
 
-    --popover: 30 20% 18%;
-    --popover-foreground: 45 50% 88%;
+    --popover: 220 35% 12%;
+    --popover-foreground: 45 90% 92%;
 
-    --primary: 82 35% 42%;
-    --primary-foreground: 45 80% 95%;
+    --primary: 200 80% 45%;
+    --primary-foreground: 45 95% 95%;
 
-    --secondary: 30 25% 35%;
-    --secondary-foreground: 45 50% 88%;
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 45 90% 92%;
 
-    --muted: 30 15% 25%;
-    --muted-foreground: 45 20% 60%;
+    --muted: 220 25% 18%;
+    --muted-foreground: 200 30% 65%;
 
-    --accent: 45 60% 50%;
-    --accent-foreground: 30 25% 15%;
+    --accent: 45 85% 55%;
+    --accent-foreground: 220 40% 10%;
 
-    --destructive: 0 62% 45%;
-    --destructive-foreground: 45 80% 95%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 45 95% 95%;
 
-    --border: 30 20% 28%;
-    --input: 30 20% 22%;
-    --ring: 45 60% 50%;
+    --border: 220 30% 22%;
+    --input: 220 35% 15%;
+    --ring: 45 85% 55%;
 
     --radius: 0.75rem;
     
-    /* Jurassic gradients and effects */
-    --gradient-hero: linear-gradient(135deg, hsl(82 35% 42%) 0%, hsl(30 25% 35%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(45 60% 50%) 0%, hsl(45 50% 40%) 100%);
-    --shadow-glow: 0 0 30px hsl(45 60% 50% / 0.3);
-    --shadow-stone: 0 10px 40px -10px hsl(30 25% 15% / 0.5);
+    /* Cosmic gradients and metallic effects */
+    --gradient-hero: linear-gradient(135deg, hsl(220 60% 15%) 0%, hsl(200 70% 25%) 100%);
+    --gradient-cosmic: linear-gradient(135deg, hsl(200 80% 45%) 0%, hsl(220 60% 35%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 85% 55%) 0%, hsl(40 80% 45%) 100%);
+    --shadow-glow-gold: 0 0 40px hsl(45 85% 55% / 0.4);
+    --shadow-glow-blue: 0 0 30px hsl(200 80% 50% / 0.3);
+    --shadow-cosmic: 0 15px 50px -15px hsl(200 70% 30% / 0.6);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -64,26 +66,26 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Same jurassic theme for dark mode */
-    --background: 82 20% 12%;
-    --foreground: 45 50% 88%;
-    --card: 30 20% 18%;
-    --card-foreground: 45 50% 88%;
-    --popover: 30 20% 18%;
-    --popover-foreground: 45 50% 88%;
-    --primary: 82 35% 42%;
-    --primary-foreground: 45 80% 95%;
-    --secondary: 30 25% 35%;
-    --secondary-foreground: 45 50% 88%;
-    --muted: 30 15% 25%;
-    --muted-foreground: 45 20% 60%;
-    --accent: 45 60% 50%;
-    --accent-foreground: 30 25% 15%;
-    --destructive: 0 62% 45%;
-    --destructive-foreground: 45 80% 95%;
-    --border: 30 20% 28%;
-    --input: 30 20% 22%;
-    --ring: 45 60% 50%;
+    /* Same cosmic theme for dark mode */
+    --background: 220 40% 8%;
+    --foreground: 45 90% 92%;
+    --card: 220 35% 12%;
+    --card-foreground: 45 90% 92%;
+    --popover: 220 35% 12%;
+    --popover-foreground: 45 90% 92%;
+    --primary: 200 80% 45%;
+    --primary-foreground: 45 95% 95%;
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 45 90% 92%;
+    --muted: 220 25% 18%;
+    --muted-foreground: 200 30% 65%;
+    --accent: 45 85% 55%;
+    --accent-foreground: 220 40% 10%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 45 95% 95%;
+    --border: 220 30% 22%;
+    --input: 220 35% 15%;
+    --ring: 45 85% 55%;
   }
 }
 
@@ -95,9 +97,10 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-sans;
     background-image: 
-      radial-gradient(circle at 20% 50%, hsl(82 35% 42% / 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, hsl(30 25% 35% / 0.08) 0%, transparent 50%),
-      repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(30 25% 15% / 0.03) 2px, hsl(30 25% 15% / 0.03) 4px);
+      radial-gradient(circle at 20% 30%, hsl(200 80% 45% / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, hsl(220 60% 35% / 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(45 85% 55% / 0.03) 0%, transparent 70%),
+      repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(220 40% 10% / 0.05) 2px, hsl(220 40% 10% / 0.05) 4px);
     background-attachment: fixed;
   }
   
