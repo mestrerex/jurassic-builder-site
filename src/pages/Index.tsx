@@ -123,7 +123,7 @@ const Index = () => {
 
       <div className="w-full max-w-2xl animate-fade-in relative z-10">
         {/* Main Title - Metallic Gold with Pulse */}
-        <h1 className="font-jurassic text-center text-6xl sm:text-7xl md:text-8xl mb-8 text-accent animate-pulse-glow leading-tight tracking-wider bg-gradient-to-r from-accent via-yellow-400 to-accent bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer drop-shadow-[0_0_30px_hsl(45_85%_55%/0.6)]">
+        <h1 className="font-jurassic text-center text-6xl sm:text-7xl md:text-8xl mb-8 mt-12 text-accent animate-pulse leading-tight tracking-wider bg-gradient-to-r from-accent via-yellow-400 to-accent bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer drop-shadow-[0_0_30px_hsl(45_85%_55%/0.6)]">
           Mestre Rex
         </h1>
         
@@ -183,7 +183,7 @@ const Index = () => {
               <Button
                 type="submit"
                 variant="outline"
-                className="w-full h-14 text-lg font-bold bg-primary/10 border-2 border-primary/50 text-foreground hover:bg-primary/20 hover:border-primary rounded-xl shadow-[0_0_20px_hsl(200_80%_45%/0.2)] hover:shadow-[0_0_30px_hsl(200_80%_45%/0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                className="w-full h-14 text-lg font-bold bg-primary/10 border-2 border-primary/50 text-foreground hover:bg-primary/20 hover:border-primary hover:text-accent rounded-xl shadow-[0_0_20px_hsl(200_80%_45%/0.2)] hover:shadow-[0_0_30px_hsl(200_80%_45%/0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               >
                 Entrar na fila (Inscreva-se)
               </Button>
@@ -195,11 +195,6 @@ const Index = () => {
         <p className="text-center mt-10 text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
           Algo grandioso está por vir.<br />
           <span className="text-accent/80">Uma marca misteriosa e poderosa.</span>
-        </p>
-
-        {/* Cosmic tagline */}
-        <p className="text-center mt-4 text-xs text-primary/60 font-medium tracking-wider">
-          PODER ANTIGO × TECNOLOGIA FUTURA
         </p>
       </div>
     </div>
